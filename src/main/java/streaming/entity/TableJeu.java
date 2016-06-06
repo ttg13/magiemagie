@@ -27,8 +27,8 @@ public class TableJeu implements Serializable {
     private Long id;
 
     private long JoueurJoue;
-    @OneToMany(mappedBy = "tablejeu")
-    private List<Joueur> joueurs = new ArrayList();
+//    @OneToMany(mappedBy = "tablejeu")
+//    private List<Joueur> joueurs = new ArrayList();
     public Long getId() {
         return id;
     }
@@ -40,14 +40,14 @@ public class TableJeu implements Serializable {
     public void setJoueurJoue(long JoueurJoue) {
         this.JoueurJoue = JoueurJoue;
     }
-
-    public List<Joueur> getJoueurs() {
-        return joueurs;
-    }
-
-    public void setJoueurs(List<Joueur> joueurs) {
-        this.joueurs = joueurs;
-    }
+//
+//    public List<Joueur> getJoueurs() {
+//        return joueurs;
+//    }
+//
+//    public void setJoueurs(List<Joueur> joueurs) {
+//        this.joueurs = joueurs;
+//    }
     
     
 

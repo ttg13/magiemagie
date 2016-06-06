@@ -5,6 +5,7 @@
  */
 package streaming.service;
 
+import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 import streaming.entity.Joueur;

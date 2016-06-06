@@ -5,16 +5,28 @@
  */
 package streaming.service;
 
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import streaming.entity.Joueur;
 
 /**
  *
  * @author ajc
  */
+
+
 @Service
 public class TableJeuService {
+    @Autowired 
+    TableJeuCrudService tableCrud;
+    
+    @Autowired 
+    JoueurCrudService joueurCrud;
+    
+    
     public void commencerJeu(){
-        
+//         final int qteFromage = ThreadLocalRandom.current().nextInt(2,4);
     }
     
 }

@@ -34,9 +34,9 @@ public class Joueur implements Serializable {
     private long TypeSorciere;
     
     
-    @ManyToOne
-    @JoinColumn(name = "tablejeuId")
-    private TableJeu tablejeu;
+//    @ManyToOne
+//    @JoinColumn(name = "tablejeuId")
+//    private TableJeu tablejeu;
 
     @OneToMany(mappedBy = "joueur")
     private List<Carte> cartes = new ArrayList();
@@ -79,13 +79,13 @@ public class Joueur implements Serializable {
         this.TypeSorciere = TypeSorciere;
     }
 
-    public TableJeu getTablejeu() {
-        return tablejeu;
-    }
-
-    public void setTablejeu(TableJeu tablejeu) {
-        this.tablejeu = tablejeu;
-    }
+//    public TableJeu getTablejeu() {
+//        return tablejeu;
+//    }
+//
+//    public void setTablejeu(TableJeu tablejeu) {
+//        this.tablejeu = tablejeu;
+//    }
 
     public List<Carte> getCartes() {
         return cartes;

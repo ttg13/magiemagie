@@ -5,4 +5,4 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-Copyright Team Des CHAMPIONS® 1991-2016, tous droits réservés.
+Copyright Team Des CHAMPIONS® 1991(voir 1990 mais c'est pas sur) 2016, tous droits réservés.

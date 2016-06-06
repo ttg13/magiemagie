@@ -21,19 +21,48 @@
 
         <div class="contenu">
 
-            <div class="flexbox">
-            <div class="floating-box">adversaire1 </div>
-            <div class="floating-box">adversaire2 </div>
-            <div class="floating-box">adversaire3 </div>
-            <div class="floating-box">adversaire4 </div>
-            <div class="floating-box">adversaire5 </div>
-            <div class="floating-box">adversaire6 </div>
-            <div class="floating-box">adversaire7 </div>
-            </div>
             
-            <br>
             
+            
+            <div class="post-container">                
+    <div class="post-thumb"><img src="images/s1.png"  height="200" width="142"></div>
+    <div class="post-content">
+        <p>Pseudo <br> Nombre de cartes: ??? <br> Statut vivant/mort</p></div>
+</div>
+            <div class="post-container">                
+    <div class="post-thumb"><img src="images/s2.png"  height="200" width="142"></div>
+    <div class="post-content">
+        <p>Pseudo <br> Nombre de cartes: ??? </p></div>
+</div>
+            <div class="post-container">                
+    <div class="post-thumb"><img src="images/s3.png"  height="200" width="142"></div>
+    <div class="post-content">
+        <p>Pseudo <br> Nombre de cartes: ??? </p></div>
+</div>
+            <div class="post-container">                
+    <div class="post-thumb"><img src="images/s4.png"  height="200" width="142"></div>
+    <div class="post-content">
+        <p>Pseudo <br> Nombre de cartes: ??? </p></div>
+</div>
+            <div class="post-container">                
+    <div class="post-thumb"><img src="images/s5.png"  height="200" width="142"></div>
+    <div class="post-content">
+        <p>Pseudo <br> Nombre de cartes: ??? </p></div>
+</div>
+            <div class="post-container">                
+    <div class="post-thumb"><img src="images/s6.png"  height="200" width="142"></div>
+    <div class="post-content">
+        <p>Pseudo <br> Nombre de cartes: ??? </p></div>
+</div>
+            <div class="post-container">                
+    <div class="post-thumb"><img src="images/s7.png"  height="200" width="142"></div>
+    <div class="post-content">
+        <p>Pseudo <br> Nombre de cartes: ??? </p></div>
+</div>
+            
+           
           
+   
             
             
         </div> 

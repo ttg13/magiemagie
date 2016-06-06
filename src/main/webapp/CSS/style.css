@@ -1,10 +1,24 @@
 
-//zone de style des paragraphes
 
-img {
-	max-width: 30%;
-	height: auto;
+
+body {
+color:white;
+background-color:black;
+background-image:url(http://umad.com/img/2015/10/dark-wood-wallpaper-601-659-hd-wallpapers.jpg);
 }
+
+
+
+
+
+
+.dashboard{
+   font-family: fantasy;
+   background-color: black;
+}
+
+
+
 
 .floating-box-images {
     font-family: fantasy;
@@ -27,13 +41,24 @@ img {
 
 
 
-.flexbox
-{
-    display: flex;
-    justify-content: space-around;
-    
+.post-container {
+    display: inline-block;
+    width: 350px;
+    height: 200px;
+    margin: 20px 20px 0 0;  
+    border: 5px solid #73AD21; 
+    overflow: auto;
+        font-family: fantasy;
 }
-
+.post-thumb {
+    float: left
+}
+.post-thumb img {
+    display: block
+}
+.post-content {
+    margin-left: 210px
+}
 
 
 .button{
@@ -57,6 +82,6 @@ box-shadow:         0px 2px 1px rgba(50, 50, 50, 0.75);
 }
 
 .pied{
-    background-image : url( http://img3.themebin.com/1920x1080/google_abstract_hd.jpg);
+    background-color: black;
     color :  #fff; /* couleur du texte */
 }

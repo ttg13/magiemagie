@@ -30,7 +30,7 @@ public class Joueur implements Serializable {
     
     private String Pseudo;
     private long DateArrivee;
-    private boolean MarqueurMain;
+    private boolean Marqueurmain;
     private long TypeSorciere;
     
     
@@ -63,13 +63,15 @@ public class Joueur implements Serializable {
         this.DateArrivee = DateArrivee;
     }
 
-    public boolean isMarqueurMain() {
-        return MarqueurMain;
+    public boolean isMarqueurmain() {
+        return Marqueurmain;
     }
 
-    public void setMarqueurMain(boolean MarqueurMain) {
-        this.MarqueurMain = MarqueurMain;
+    public void setMarqueurmain(boolean Marqueurmain) {
+        this.Marqueurmain = Marqueurmain;
     }
+
+   
 
     public long getTypeSorciere() {
         return TypeSorciere;

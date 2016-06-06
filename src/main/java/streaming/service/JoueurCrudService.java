@@ -12,5 +12,8 @@ import streaming.entity.Joueur;
 
 @Service
 public interface JoueurCrudService extends CrudRepository<Joueur, Long> {
-
+    @Override
+    public List<Joueur> findAll();
+    
+    public List<Joueur> findAllByMarqueurmainIsTrue();
 }

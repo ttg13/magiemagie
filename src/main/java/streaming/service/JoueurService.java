@@ -5,7 +5,9 @@
  */
 package streaming.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import streaming.entity.Joueur;
 
 /**
  *
@@ -13,5 +15,17 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class JoueurService {
+     @Autowired 
+    JoueurCrudService joueurCrud;
+     
+    public void creerJoueur(String login, long carte){
+        Joueur j = new Joueur();
+        j.setPseudo(login);
+       long ordre = joueurCrud.findAll().size();
+        j.setDateArrivee(ordre +1);
+        j.setTypeSorciere(carte);
+        j.setMarqueurmain(false);
+        joueurCrud.save(j);
+    }
     
 }

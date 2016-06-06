@@ -9,7 +9,6 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 import streaming.entity.Carte;
-import streaming.entity.Carte.Typecarte;
 
 /**
  *
@@ -18,5 +17,5 @@ import streaming.entity.Carte.Typecarte;
 @Service
     public interface CarteCrudService extends CrudRepository<Carte, Long>{
         public List<Carte> findAllByJoueurId(long id);
-        public List<Carte> findAllByJoueurIdByTypecarte(long id, Typecarte type);
+        public List<Carte> findAllByJoueurIdAndTypecarte(long id, Carte.Typecarte type);
 }

@@ -26,7 +26,7 @@ public class TableJeu implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private long joueurJoue;
+    private long JoueurJoue;
 //    @OneToMany(mappedBy = "tablejeu")
 //    private List<Joueur> joueurs = new ArrayList();
     public Long getId() {
@@ -34,11 +34,11 @@ public class TableJeu implements Serializable {
     }
 
     public long getJoueurJoue() {
-        return joueurJoue;
+        return JoueurJoue;
     }
 
     public void setJoueurJoue(long JoueurJoue) {
-        this.joueurJoue = JoueurJoue;
+        this.JoueurJoue = JoueurJoue;
     }
 //
 //    public List<Joueur> getJoueurs() {

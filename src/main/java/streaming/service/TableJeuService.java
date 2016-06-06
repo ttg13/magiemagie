@@ -106,11 +106,11 @@ public class TableJeuService {
     public List<String> listeSort(long idJoueur){
         List<String> sorts = new ArrayList<>();
         
-        List<Carte> corne = carteCrud.findAllByJoueurIdByTypecarte(idJoueur, Carte.Typecarte.CORNELICORNE);
-        List<Carte> bave = carteCrud.findAllByJoueurIdByTypecarte(idJoueur, Carte.Typecarte.BAVECRAPAUD);
-        List<Carte> aile = carteCrud.findAllByJoueurIdByTypecarte(idJoueur, Carte.Typecarte.AILESOURIS);
-        List<Carte> lapis = carteCrud.findAllByJoueurIdByTypecarte(idJoueur, Carte.Typecarte.LAPISLAZULIS);
-        List<Carte> sang = carteCrud.findAllByJoueurIdByTypecarte(idJoueur, Carte.Typecarte.SANGVIERGE);
+        List<Carte> corne = carteCrud.findAllByJoueurIdAndTypecarte(idJoueur, Carte.Typecarte.CORNELICORNE);
+        List<Carte> bave = carteCrud.findAllByJoueurIdAndTypecarte(idJoueur, Carte.Typecarte.BAVECRAPAUD);
+        List<Carte> aile = carteCrud.findAllByJoueurIdAndTypecarte(idJoueur, Carte.Typecarte.AILESOURIS);
+        List<Carte> lapis = carteCrud.findAllByJoueurIdAndTypecarte(idJoueur, Carte.Typecarte.LAPISLAZULIS);
+        List<Carte> sang = carteCrud.findAllByJoueurIdAndTypecarte(idJoueur, Carte.Typecarte.SANGVIERGE);
         
         if(!corne.isEmpty() && !bave.isEmpty()){
             sorts.add("INVISIBLITE ");

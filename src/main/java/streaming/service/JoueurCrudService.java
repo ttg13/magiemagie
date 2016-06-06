@@ -11,9 +11,11 @@ import org.springframework.stereotype.Service;
 import streaming.entity.Joueur;
 
 @Service
-public interface JoueurCrudService extends CrudRepository<Joueur, Long> {
+public interface JoueurCrudService extends CrudRepository<Joueur, Long> { 
     @Override
     public List<Joueur> findAll();
     
-    public List<Joueur> findAllByMarqueurmainIsTrue();
+    public List<Joueur> findAllByMarqueurMainTrue();
+    
+    public Joueur findOneByDateArrivee(long date); 
 }

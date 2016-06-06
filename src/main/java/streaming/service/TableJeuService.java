@@ -27,6 +27,8 @@ public class TableJeuService {
     @Autowired
     CarteService carteService;
     
+    @Autowired
+    JoueurService joueurService;
     
     public void commencerJeu(){
             List<Joueur> joueurs = joueurCrud.findAll();
@@ -35,7 +37,23 @@ public class TableJeuService {
                     carteService.creerRandomCarte(j.getId());
                 }
             }
+            joueurCrud.findOneByDateArrivee(1l).setMarqueurMain(true);
+            
             
     }
     
+    public void jouerSuivant(){
+        Joueur actuel = joueurCrud.findAllByMarqueurMainTrue().get(0);
+        actuel.setMarqueurMain(false);
+        joueurCrud.save(actuel);
+        if(actuel.getDateArrivee()== joueurCrud.findAll().size()){
+            Joueur premier = joueurCrud.findOneByDateArrivee(1);
+            joueurCrud.save(premier);
+        }
+        else{
+        Joueur suivant = joueurCrud.findOneByDateArrivee(actuel.getDateArrivee()+1);
+        suivant.setMarqueurMain(true);
+        joueurCrud.save(suivant);
+        }
+    }
 }

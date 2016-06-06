@@ -24,8 +24,9 @@ public class JoueurService {
        long ordre = joueurCrud.findAll().size();
         j.setDateArrivee(ordre +1);
         j.setTypeSorciere(carte);
-        j.setMarqueurmain(false);
+        j.setMarqueurMain(false);
         joueurCrud.save(j);
     }
+    
     
 }

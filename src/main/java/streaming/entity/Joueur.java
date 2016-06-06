@@ -28,10 +28,11 @@ public class Joueur implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    private String Pseudo;
-    private long DateArrivee;
-    private boolean Marqueurmain;
-    private long TypeSorciere;
+    private String pseudo;
+    private long dateArrivee;
+    private boolean marqueurMain;
+    private boolean perdu;
+    private long typeSorciere;
     
     
 //    @ManyToOne
@@ -41,6 +42,14 @@ public class Joueur implements Serializable {
     @OneToMany(mappedBy = "joueur")
     private List<Carte> cartes = new ArrayList();
 
+    public boolean isperdu() {
+        return perdu;
+    }
+
+    public void setperdu(boolean Perdu) {
+        this.perdu = Perdu;
+    }
+
     
 
     public Long getId() {
@@ -48,38 +57,45 @@ public class Joueur implements Serializable {
     }
 
     public String getPseudo() {
-        return Pseudo;
+        return pseudo;
     }
 
-    public void setPseudo(String Pseudo) {
-        this.Pseudo = Pseudo;
+    public void setPseudo(String pseudo) {
+        this.pseudo = pseudo;
     }
 
     public long getDateArrivee() {
-        return DateArrivee;
+        return dateArrivee;
     }
 
-    public void setDateArrivee(long DateArrivee) {
-        this.DateArrivee = DateArrivee;
+    public void setDateArrivee(long dateArrivee) {
+        this.dateArrivee = dateArrivee;
     }
 
-    public boolean isMarqueurmain() {
-        return Marqueurmain;
+    public boolean isMarqueurMain() {
+        return marqueurMain;
     }
 
-    public void setMarqueurmain(boolean Marqueurmain) {
-        this.Marqueurmain = Marqueurmain;
+    public void setMarqueurMain(boolean marqueurMain) {
+        this.marqueurMain = marqueurMain;
     }
 
-   
+    public boolean isPerdu() {
+        return perdu;
+    }
+
+    public void setPerdu(boolean perdu) {
+        this.perdu = perdu;
+    }
 
     public long getTypeSorciere() {
-        return TypeSorciere;
+        return typeSorciere;
     }
 
-    public void setTypeSorciere(long TypeSorciere) {
-        this.TypeSorciere = TypeSorciere;
+    public void setTypeSorciere(long typeSorciere) {
+        this.typeSorciere = typeSorciere;
     }
+    
 
 //    public TableJeu getTablejeu() {
 //        return tablejeu;

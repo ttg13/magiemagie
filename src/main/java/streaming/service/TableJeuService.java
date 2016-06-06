@@ -24,9 +24,18 @@ public class TableJeuService {
     @Autowired 
     JoueurCrudService joueurCrud;
     
+    @Autowired
+    CarteService carteService;
+    
     
     public void commencerJeu(){
-//         final int qteFromage = ThreadLocalRandom.current().nextInt(2,4);
+            List<Joueur> joueurs = joueurCrud.findAll();
+            for(Joueur j : joueurs){
+                for(int i=0; i<7; i++){
+                    carteService.creerRandomCarte(j.getId());
+                }
+            }
+            
     }
     
 }

@@ -36,7 +36,7 @@ public class Carte implements Serializable {
     }
     
     @ManyToOne
-    @JoinColumn(name = "joueur_id")
+    @JoinColumn(name = "joueurId")
     private Joueur joueur;
     
     @Enumerated(EnumType.STRING)
@@ -49,6 +49,16 @@ public class Carte implements Serializable {
     public void setTypecarte(Typecarte typecarte) {
         this.typecarte = typecarte;
     }
+
+    public Joueur getJoueur() {
+        return joueur;
+    }
+
+    public void setJoueur(Joueur joueur) {
+        this.joueur = joueur;
+    }
+    
+    
     
     
 

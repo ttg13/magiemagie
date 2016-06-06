@@ -13,5 +13,8 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class TableJeuService {
+    public void commencerJeu(){
+        
+    }
     
 }

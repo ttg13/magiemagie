@@ -35,7 +35,7 @@ public class Joueur implements Serializable {
     
     
     @ManyToOne
-    @JoinColumn(name = "tablejeu_id")
+    @JoinColumn(name = "tablejeuId")
     private TableJeu tablejeu;
 
     @OneToMany(mappedBy = "joueur")
@@ -46,6 +46,56 @@ public class Joueur implements Serializable {
     public Long getId() {
         return id;
     }
+
+    public String getPseudo() {
+        return Pseudo;
+    }
+
+    public void setPseudo(String Pseudo) {
+        this.Pseudo = Pseudo;
+    }
+
+    public long getDateArrivee() {
+        return DateArrivee;
+    }
+
+    public void setDateArrivee(long DateArrivee) {
+        this.DateArrivee = DateArrivee;
+    }
+
+    public boolean isMarqueurMain() {
+        return MarqueurMain;
+    }
+
+    public void setMarqueurMain(boolean MarqueurMain) {
+        this.MarqueurMain = MarqueurMain;
+    }
+
+    public long getTypeSorciere() {
+        return TypeSorciere;
+    }
+
+    public void setTypeSorciere(long TypeSorciere) {
+        this.TypeSorciere = TypeSorciere;
+    }
+
+    public TableJeu getTablejeu() {
+        return tablejeu;
+    }
+
+    public void setTablejeu(TableJeu tablejeu) {
+        this.tablejeu = tablejeu;
+    }
+
+    public List<Carte> getCartes() {
+        return cartes;
+    }
+
+    public void setCartes(List<Carte> cartes) {
+        this.cartes = cartes;
+    }
+    
+    
 
     public void setId(Long id) {
         this.id = id;

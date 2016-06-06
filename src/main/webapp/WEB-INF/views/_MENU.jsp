@@ -11,7 +11,7 @@
 <c:choose>
     <c:when test="${utilConnecte!=null}">
         <br>
-        <a href="<c:url value="/echanger"/>"> Echanger &nbsp &nbsp</a>
+        <a  class="button" href="<c:url value="/echanger"/>"> Echanger</a>
         <a href="<c:url value="planter"/>"> Planter &nbsp &nbsp</a>
         <a href="<c:url value="reproduire"/>"> Reproduire &nbsp &nbsp</a>
         <a href="<c:url value="nourrir"/>"> Nourrir &nbsp &nbsp</a>
@@ -37,7 +37,9 @@
         <input type="text" name="login"/>
         <label>Password          </label>
         <input type="password" name="pass" />
-        <input type="submit" titre="ajouter" value="Connexion"/>
+        
+        <input class="button" type="submit" titre="ajouter" value="Connexion"/>
+        
         <a href="<c:url value="/inscription.jsp"/>">&nbsp &nbsp inscription &nbsp &nbsp </a>
         <br>
     </form>

@@ -92,7 +92,7 @@ public class Carte implements Serializable {
 
     @Override
     public String toString() {
-        return "streaming.entity.Carte[ id=" + id + " ]";
+        return "Carte" + this.typecarte;
     }
     
 }

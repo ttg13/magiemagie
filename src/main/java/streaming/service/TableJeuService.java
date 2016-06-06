@@ -113,22 +113,22 @@ public class TableJeuService {
         List<Carte> sang = carteCrud.findAllByJoueurIdAndTypecarte(idJoueur, Carte.Typecarte.SANGVIERGE);
         
         if(!corne.isEmpty() && !bave.isEmpty()){
-            sorts.add("INVISIBLITE ");
+            sorts.add("INVISIBLITE");
         }
         if(!corne.isEmpty() && !sang.isEmpty()){
-            sorts.add("FILTRE D AMOUR ");
+            sorts.add("FILTRE D AMOUR");
         }
         if(!lapis.isEmpty() && !bave.isEmpty()){
-            sorts.add("HYPNOSE ");
+            sorts.add("HYPNOSE");
         }
         if(!lapis.isEmpty() && !aile.isEmpty()){
-            sorts.add("DIVINATION ");
+            sorts.add("DIVINATION");
         }
         if(!sang.isEmpty() && !bave.isEmpty()){
             sorts.add("SOMMEIL PROFOND");
         }
        if(sorts.isEmpty()) {
-           sorts.add("DOMMAGE ");
+           sorts.add("DOMMAGE");
         }
         
         

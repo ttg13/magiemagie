@@ -5,6 +5,7 @@
  */
 package streaming.service;
 
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,5 +40,43 @@ public class CarteService {
         }
         carteCrud.save(carte);
     }
+    
+     public void creerSpecifiqueCarte(long idJoueur, Carte.Typecarte type){
+        Carte carte = new Carte();
+        carte.setJoueur(joueurCrud.findOne(idJoueur));
+           carte.setTypecarte(type);
+        
+        carteCrud.save(carte);
+    }
+     
+     public void supprimerCarte(long idJoueur, Carte.Typecarte type){
+         List<Carte> cartes = carteCrud.findAllByJoueurIdAndTypecarte(idJoueur, type);
+         if(cartes.isEmpty()){
+             throw new RuntimeException();
+         }
+         else{
+            carteCrud.delete(cartes.get(0));
+         }
+     }
+     
+     public void volerCarte(long idVoleur, long idVictime){
+         List<Carte> cartes = carteCrud.findAllByJoueurId(idVictime);
+         int i = ThreadLocalRandom.current().nextInt(1,cartes.size()+1);
+         cartes.get(i).setJoueur(joueurCrud.findOne(idVoleur));
+         carteCrud.save(cartes.get(i));
+//         creerSpecifiqueCarte(idVoleur, cartes.get(i).getTypecarte());
+//         carteCrud.delete(cartes.get(i));
+     }
+     
+     public void donnerCarte(long idVoleur, long idVictime,Carte.Typecarte type){
+         List<Carte> cartes = carteCrud.findAllByJoueurIdAndTypecarte(idVictime, type);
+         if(!cartes.isEmpty()){
+            cartes.get(0).setJoueur(joueurCrud.findOne(idVoleur));
+            carteCrud.save(cartes.get(0));
+         }
+         else{
+             throw new RuntimeException();
+         }
+     }
     
 }

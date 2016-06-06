@@ -135,7 +135,7 @@ public class Joueur implements Serializable {
 
     @Override
     public String toString() {
-        return "streaming.entity.Joueur[ id=" + id + " ]";
+        return "Joueur " + this.pseudo;
     }
     
 }

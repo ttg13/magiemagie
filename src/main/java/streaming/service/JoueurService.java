@@ -25,6 +25,7 @@ public class JoueurService {
         j.setDateArrivee(ordre +1);
         j.setTypeSorciere(carte);
         j.setMarqueurMain(false);
+        j.setPerdu(false);
         joueurCrud.save(j);
     }
     

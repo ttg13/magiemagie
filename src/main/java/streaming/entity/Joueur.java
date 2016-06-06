@@ -42,13 +42,14 @@ public class Joueur implements Serializable {
     @OneToMany(mappedBy = "joueur")
     private List<Carte> cartes = new ArrayList();
 
-    public boolean isperdu() {
+    public boolean isPerdu() {
         return perdu;
     }
 
-    public void setperdu(boolean Perdu) {
-        this.perdu = Perdu;
+    public void setPerdu(boolean perdu) {
+        this.perdu = perdu;
     }
+
 
     
 
@@ -80,13 +81,6 @@ public class Joueur implements Serializable {
         this.marqueurMain = marqueurMain;
     }
 
-    public boolean isPerdu() {
-        return perdu;
-    }
-
-    public void setPerdu(boolean perdu) {
-        this.perdu = perdu;
-    }
 
     public long getTypeSorciere() {
         return typeSorciere;

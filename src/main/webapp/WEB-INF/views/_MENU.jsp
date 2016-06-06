@@ -8,45 +8,24 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 
-<c:choose>
-    <c:when test="${utilConnecte!=null}">
-        <br>
-        <a  class="button" href="<c:url value="/echanger"/>"> Echanger</a>
-        <a href="<c:url value="planter"/>"> Planter &nbsp &nbsp</a>
-        <a href="<c:url value="reproduire"/>"> Reproduire &nbsp &nbsp</a>
-        <a href="<c:url value="nourrir"/>"> Nourrir &nbsp &nbsp</a>
-        <a href="<c:url value="/logout"/>"> Déconnexion <br></a>
-        <br>
-        <br>
-        
-        <div id="sousmenu">
-     
-        </div>
-        
-        <br>
-        <br>
-        
-        
-        <br>
-    </c:when>
-    <c:otherwise>
-        
-        <br>
-        <form method="post" action="<c:url value="/login"/>"/>
-        <label>Login          </label>
-        <input type="text" name="login"/>
-        <label>Password          </label>
-        <input type="password" name="pass" />
-        
-        <input class="button" type="submit" titre="ajouter" value="Connexion"/>
-        
-        <a href="<c:url value="/inscription.jsp"/>">&nbsp &nbsp inscription &nbsp &nbsp </a>
-        <br>
-    </form>
-</c:otherwise>
-</c:choose>
 
 
 
-</ul>       
+
+<div class="floating-box-main"><img src="images/ailes.png"  height="222" width="158" alt="description"/>Quantité :1</div>
+<div class="floating-box-main"><img src="images/bave.png"  height="222" width="158" alt="description"/>Quantité :1</div>
+<div class="floating-box-main"><img src="images/lapis.png"  height="222" width="158" alt="description"/>Quantité :1</div>
+<div class="floating-box-main"><img src="images/sang.png"  height="222" width="158" alt="description"/>Quantité :1</div>
+<div class="floating-box-main"><img src="images/unic.png"  height="222" width="158" alt="description"/>Quantité :1</div>
+
+<a  class="button" href="<c:url value="/Passer le tour"/>"> Lancer un sort</a>
+<a  class="button" href="<c:url value="/Passer le tour"/>"> Passer le tour</a>
+
+
+
+
+
+<div id="sousmenu">
+
+</div>
 

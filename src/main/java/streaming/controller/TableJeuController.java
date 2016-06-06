@@ -22,4 +22,10 @@ public class TableJeuController {
         return "homepage";
     }
     
+     @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String loginGET(Model model){
+        
+        return "login";
+    }
+    
 }

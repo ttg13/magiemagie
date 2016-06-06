@@ -21,7 +21,7 @@
 
         <div class="contenu">
 
-
+            <div class="flexbox">
             <div class="floating-box">adversaire1 </div>
             <div class="floating-box">adversaire2 </div>
             <div class="floating-box">adversaire3 </div>
@@ -29,10 +29,15 @@
             <div class="floating-box">adversaire5 </div>
             <div class="floating-box">adversaire6 </div>
             <div class="floating-box">adversaire7 </div>
-
-
+            </div>
+            
+            <br>
+            
+          
+            
+            
         </div> 
-        <img src="images/s1.png" alt="Photo de montagne"  />
+
         <div class="menu">
             <c:import url="_MENU.jsp"/>
         </div>

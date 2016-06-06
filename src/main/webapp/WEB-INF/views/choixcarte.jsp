@@ -17,7 +17,17 @@
         </div>
         <div class="contenu">
             
-            <img src="images/s1.png" alt="Photo de montagne" />
+            
+            
+            
+            <div class="floating-box"><img src="images/s1.png" alt="description"/></div>
+            <div class="floating-box"><img src="images/s2.png" alt="description"/></div>
+            <div class="floating-box"><img src="images/s3.png" alt="description"/></div>
+            <div class="floating-box"><img src="images/s4.png" alt="description"/></div>
+            <div class="floating-box"><img src="images/s5.png" alt="description"/></div>
+            <div class="floating-box"><img src="images/s6.png" alt="description"/></div>
+            <div class="floating-box"><img src="images/s7.png" alt="description"/></div>
+            <div class="floating-box"><img src="images/s8.png" alt="description"/></div>
         </div> 
         
         

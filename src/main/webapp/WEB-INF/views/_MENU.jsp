@@ -26,7 +26,7 @@
         </c:when>
         <c:otherwise>
             <c:choose>
-                <c:when test="">
+                <c:when test="${main}">
                     <a  class="button" href="<c:url value="/lancersort"/>"> Lancer un sort</a><br><br><br><br>
                     <a  class="button" href="<c:url value="/Passer le tour"/>"> Passer le tour</a><br><br><br>
                 </c:when>

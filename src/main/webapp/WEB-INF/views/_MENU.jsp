@@ -40,7 +40,7 @@
 </div>
 
 
-<div class="floating-box-main">
+<div class="floating-box-action-zone">
     
     
     

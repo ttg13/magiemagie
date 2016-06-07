@@ -5,7 +5,7 @@
  */
 package streaming.controller;
 
-import javax.servlet.http.HttpServletResponse;
+
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -57,7 +57,7 @@ public class TableJeuController {
 
     //ce post permet de démarrer la partie
     @RequestMapping(value = "/launch", method = RequestMethod.GET)
-    public String launchPOST( Model model, HttpSession session) {
+    public String launchGET( Model model, HttpSession session) {
         
         Joueur j = (Joueur) session.getAttribute("joueur");
         
@@ -65,10 +65,21 @@ public class TableJeuController {
         if(j.getDateArrivee()==1){
         j.setMarqueurMain(true);
         }
+        
+        
+        if(joueurcrud.findAllByMarqueurMainTrue().get(0)!=null){
         session.setAttribute("partielancee", true);
+        }
+        
         session.setAttribute("joueur", j);
 
         return "redirect:/homepage";
     }
 
+    @RequestMapping(value = "/passer", method = RequestMethod.GET)
+    public String passerGET(){
+        
+        tablejeuservice.joueurSuivant();
+        return "redirect:/homepage";
+    }
 }

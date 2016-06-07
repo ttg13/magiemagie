@@ -5,6 +5,7 @@
  */
 package streaming.controller;
 
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,8 +40,8 @@ public class JoueurController {
     }
     
     @RequestMapping(value = "/lancersort", method = RequestMethod.POST)
-    public String sortPOST(Model model){
-        
+    public String sortPOST(HttpSession session){
+        String sort = session.getAttribute("sort").toString();
         return "sort";
     }
 }

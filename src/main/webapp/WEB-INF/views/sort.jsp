@@ -21,13 +21,15 @@
         <div class="menu">
         <c:import url="_MENU.jsp"/>
         </div>
-        
+        <form method="post">
          <select name="sortsDispo_id">
-                    <c:forEach items="${sortsDispo}" var="sorts">
+                    <c:forEach items="${sortsDispo}" var="sort">
                         <option>${sorts}</option> 
                        
                     </c:forEach>    
         </select>
+            <button class="button" type="submit" value="lancer"></button>
+        </form>
         
         <div class="pied">
         <c:import url="_PIED.jsp"/>

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import streaming.entity.Joueur;
 import streaming.service.JoueurCrudService;
 import streaming.service.JoueurService;
+import streaming.service.TableJeuService;
 
 /**
  *
@@ -27,6 +28,9 @@ public class TableJeuController {
     
      @Autowired
     JoueurService joueurservice;
+     
+     @Autowired
+     TableJeuService tablejeuservice;
     
      @RequestMapping(value = "/homepage", method = RequestMethod.GET)
     public String homepageGET(Model model){
@@ -35,8 +39,8 @@ public class TableJeuController {
     }
     
      @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String loginGET(Model model){
-        
+    public String loginGET( Model model){
+        model.addAttribute("ajoutjoueur", new Joueur());
         return "login";
     }
     
@@ -49,4 +53,12 @@ public class TableJeuController {
         return "redirect:/homepage";
     }
     
+    //ce post permet de démarrer la partie
+    @RequestMapping(value = "/launch", method = RequestMethod.POST)
+    public String launchPOST(Model model){
+        
+        tablejeuservice.commencerJeu();
+        
+       return"redirect:/homepage"; 
+    }
 }

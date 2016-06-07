@@ -82,13 +82,6 @@ public class Joueur implements Serializable {
     }
 
 
-    public long getTypeSorciere() {
-        return typeSorciere;
-    }
-
-    public void setTypeSorciere(long typeSorciere) {
-        this.typeSorciere = typeSorciere;
-    }
     
 
 //    public TableJeu getTablejeu() {
@@ -105,6 +98,14 @@ public class Joueur implements Serializable {
 
     public void setCartes(List<Carte> cartes) {
         this.cartes = cartes;
+    }
+
+    public long getTypeSorciere() {
+        return typeSorciere;
+    }
+
+    public void setTypeSorciere(long typeSorciere) {
+        this.typeSorciere = typeSorciere;
     }
     
     

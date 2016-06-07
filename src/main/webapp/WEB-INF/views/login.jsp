@@ -34,7 +34,7 @@
                 <div class="floating-box-images"><h1>8</h1><img src="images/s8.png" height="416" width="297" alt="description"/></div>
 
                 <h1><font face="fantasy">Quel personnage voulez vous incarner ?
-                    <form:select path="typesorciere" name="sorcieres" size="1">
+                    <form:select path="typeSorciere" name="sorcieres" size="1">
                         <Option>1
                         <Option>2
                         <Option>3

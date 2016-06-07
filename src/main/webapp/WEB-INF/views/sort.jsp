@@ -21,15 +21,24 @@
         <div class="menu">
         <c:import url="_MENU.jsp"/>
         </div>
-        <form method="post">
-         <select name="sortsDispo_id">
-                    <c:forEach items="${sortsDispo}" var="sort">
-                        <option>${sort}</option> 
-                       
-                    </c:forEach>    
-        </select>
-            <button class="button" type="submit" value="lancer"></button>
-        </form>
+        <form:form modelAttribute="mesSorts" method="post">
+                 <label>Quels sort souhaites vous lancez</label><br>
+                 <form:radiobutton path="sort" value="HYPNOSE" /><label>Hypnose</label><br>
+                 <form:radiobutton path="sort"  value="INVISIBILITE"/><label>Invisibilité</label>
+                  <br>
+                 <form:radiobutton  path="sort"  value="FILTREAMOUR"/><label>Filtre d amour</label>
+                  <br>
+                 <form:radiobutton  path="sort"  value="DIVINATION"/><label>Divination</label>
+                 
+                 <%--<form:select path="joueurCible"  items="${joueurCible}" itemLabel="pseudo" itemValue="id" path="id"/>--%>
+                 
+                 <%--<form:select path="carteCible"  items="${carteCible}" itemLabel="Typecarte" itemValue="id" path="id"/>--%>
+                 
+                 
+                  <br>
+                 <input type="submit" value="Valider"/>
+            </form:form>
+                 
         
         <div class="pied">
         <c:import url="_PIED.jsp"/>

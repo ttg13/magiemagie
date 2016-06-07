@@ -61,7 +61,7 @@ public class CarteService {
      
      public void volerCarte(long idVoleur, long idVictime){
          List<Carte> cartes = carteCrud.findAllByJoueurId(idVictime);
-         int i = ThreadLocalRandom.current().nextInt(1,cartes.size()+1);
+         int i = ThreadLocalRandom.current().nextInt(0,cartes.size());
          cartes.get(i).setJoueur(joueurCrud.findOne(idVoleur));
          carteCrud.save(cartes.get(i));
 //         creerSpecifiqueCarte(idVoleur, cartes.get(i).getTypecarte());

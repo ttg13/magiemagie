@@ -9,9 +9,13 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import streaming.dto.ListeSortDTO;
+import streaming.entity.Carte;
 import streaming.entity.Joueur;
+import streaming.service.CarteCrudService;
 import streaming.service.JoueurCrudService;
 import streaming.service.JoueurService;
 import streaming.service.TableJeuService;
@@ -27,6 +31,9 @@ public class JoueurController {
     @Autowired
     JoueurCrudService joueurcrud;
     
+    @Autowired
+    CarteCrudService cartecrud;
+    
      @Autowired
     JoueurService joueurservice;
      
@@ -36,16 +43,19 @@ public class JoueurController {
     @RequestMapping(value = "/lancersort", method = RequestMethod.GET)
     public String sortGET(Model model){
         
-        model.addAttribute("sortsDispo",tableservice.listeSort(joueurcrud.findAllByMarqueurMainTrue().get(0).getId()) );
+        model.addAttribute("mesSorts",new ListeSortDTO() );
+        model.addAttribute("monJoueurCible",new Joueur() );
+        model.addAttribute("joueurCible",joueurcrud.findAllByMarqueurMainFalse() );
+        model.addAttribute("maCarte",new Carte() );
+        model.addAttribute("carteCible",cartecrud.findAllByJoueurId(1) );
         return "sort";
     }
     
     @RequestMapping(value = "/lancersort", method = RequestMethod.POST)
-    public String sortPOST(HttpSession session){
-        String sort = (String) session.getAttribute("sort");
-        Joueur j = (Joueur) session.getAttribute("joueur");
-        if(sort.equals("INVISIBILITE")){
-            joueurservice.invisiblite(j.getId());
+    public String sortPOST(HttpSession session,@ModelAttribute ListeSortDTO dto){
+        Joueur j =(Joueur) session.getAttribute("joueur");
+        if(dto.getSort().equals("INVISIBILITE")){
+            joueurservice.invisiblite(1);
         }
         return "homepage";
     }

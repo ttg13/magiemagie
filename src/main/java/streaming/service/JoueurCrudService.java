@@ -17,6 +17,8 @@ public interface JoueurCrudService extends CrudRepository<Joueur, Long> {
     
     public List<Joueur> findAllByMarqueurMainTrue();
     
+    public List<Joueur> findAllByMarqueurMainFalse();
+    
     public Joueur findOneByDateArrivee(long date); 
     
      public List<Joueur> findAllByPerduFalse();

@@ -43,7 +43,6 @@ public class JoueurService {
         List<Joueur> joueurs = joueurCrud.findAll();
             for(Joueur j : joueurs){
                carteServvice.volerCarte(idJoueur,j.getId());
-                
             }
             
         carteServvice.supprimerCarte(idJoueur, Carte.Typecarte.CORNELICORNE);

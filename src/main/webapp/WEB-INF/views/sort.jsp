@@ -28,7 +28,7 @@
                        
                     </c:forEach>    
         </select>
-<!--            <button class="button" type="submit" value="lancer"></button>-->
+            <button class="button" type="submit" value="lancer"></button>
         </form>
         
         <div class="pied">

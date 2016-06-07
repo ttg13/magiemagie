@@ -42,9 +42,8 @@ public class JoueurService {
     public void invisiblite(long idJoueur){
         List<Joueur> joueurs = joueurCrud.findAll();
             for(Joueur j : joueurs){
-                if(!j.equals(joueurCrud.findOne(idJoueur))){
-                    carteServvice.volerCarte(idJoueur,j.getId());
-                }
+               carteServvice.volerCarte(idJoueur,j.getId());
+                
             }
             
         carteServvice.supprimerCarte(idJoueur, Carte.Typecarte.CORNELICORNE);

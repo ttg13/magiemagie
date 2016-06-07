@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import streaming.entity.Joueur;
 import streaming.service.JoueurCrudService;
 import streaming.service.JoueurService;
 import streaming.service.TableJeuService;
@@ -42,6 +43,10 @@ public class JoueurController {
     @RequestMapping(value = "/lancersort", method = RequestMethod.POST)
     public String sortPOST(HttpSession session){
         String sort = (String) session.getAttribute("sort");
-        return "sort";
+        Joueur j = (Joueur) session.getAttribute("joueur");
+        if(sort.equals("INVISIBILITE")){
+            joueurservice.invisiblite(j.getId());
+        }
+        return "homepage";
     }
 }

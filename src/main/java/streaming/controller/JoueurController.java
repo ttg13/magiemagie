@@ -41,7 +41,7 @@ public class JoueurController {
     
     @RequestMapping(value = "/lancersort", method = RequestMethod.POST)
     public String sortPOST(HttpSession session){
-        String sort = session.getAttribute("sort").toString();
+        String sort = (String) session.getAttribute("sort");
         return "sort";
     }
 }

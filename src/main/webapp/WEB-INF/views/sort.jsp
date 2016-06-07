@@ -24,11 +24,11 @@
         <form method="post">
          <select name="sortsDispo_id">
                     <c:forEach items="${sortsDispo}" var="sort">
-                        <option>${sorts}</option> 
+                        <option>${sort}</option> 
                        
                     </c:forEach>    
         </select>
-            <button class="button" type="submit" value="lancer"></button>
+<!--            <button class="button" type="submit" value="lancer"></button>-->
         </form>
         
         <div class="pied">

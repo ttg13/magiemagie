@@ -5,6 +5,7 @@
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -21,10 +22,12 @@
         <c:import url="_MENU.jsp"/>
         </div>
         
-        <form:form method="post" modelAttribute="listesort" >
-            <form:select path="listesort" name="sort" size="1">
-            </form:select>
-        </form:form>
+         <select name="sortsDispo_id">
+                    <c:forEach items="${sortsDispo}" var="sorts">
+                        <option>${sorts}</option> 
+                       
+                    </c:forEach>    
+        </select>
         
         <div class="pied">
         <c:import url="_PIED.jsp"/>

@@ -17,7 +17,6 @@
     }
     
     $(function(){
-        
         setInterval(raffrai, 1000);
         raffrai();
     });

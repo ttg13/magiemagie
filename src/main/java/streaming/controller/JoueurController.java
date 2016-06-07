@@ -34,7 +34,7 @@ public class JoueurController {
     @RequestMapping(value = "/lancersort", method = RequestMethod.GET)
     public String sortGET(Model model){
         
-        model.addAttribute("listesort",tableservice.listeSort(joueurcrud.findAllByMarqueurMainTrue().get(0).getId()) );
+        model.addAttribute("sortsDispo",tableservice.listeSort(joueurcrud.findAllByMarqueurMainTrue().get(0).getId()) );
         return "sort";
     }
     

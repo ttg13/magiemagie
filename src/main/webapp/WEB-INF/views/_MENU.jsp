@@ -19,13 +19,33 @@
 <div class="floating-box-main"><img src="images/sang.png"  height="222" width="158" alt="description"/>Quantité :1</div>
 <div class="floating-box-main"><img src="images/unic.png"  height="222" width="158" alt="description"/>Quantité :1</div>
 <div class="floating-box-main">
-    <a  class="button" href="<c:url value="/launch"/>"> Lancer la partie !</a><br><br><br><br>
-    <a  class="button" href="<c:url value="/lancersort"/>"> Lancer un sort</a><br><br><br><br>
-<a  class="button" href="<c:url value="/Passer le tour"/>"> Passer le tour</a><br><br><br>
+
+    <c:choose>
+        <c:when test="${partielancee!=true}">
+            <a  class="button" href="<c:url value="/launch"/>"> Lancer la partie !</a><br><br><br><br>
+        </c:when>
+        <c:otherwise>
+            <c:choose>
+                <c:when test="">
+                    <a  class="button" href="<c:url value="/lancersort"/>"> Lancer un sort</a><br><br><br><br>
+                    <a  class="button" href="<c:url value="/Passer le tour"/>"> Passer le tour</a><br><br><br>
+                </c:when>
+                <c:otherwise>
+                    <a  class="buttonoff" href="<c:url value="#"/>"> Lancer un sort</a><br><br><br><br>
+                    <a  class="buttonoff" href="<c:url value="#"/>"> Passer le tour</a><br><br><br>
+                </c:otherwise>
+            </c:choose>
+        </c:otherwise>
+    </c:choose>
 </div>
 
 
-
+<div class="floating-box-main">
+    
+    
+    
+    
+</div>
 
 <div id="sousmenu">
 

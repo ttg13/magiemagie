@@ -13,7 +13,7 @@
 <div class="dashboard">Dashboard</div>
 <br>
 
-<div class="floating-box-main"><img src="images/ailes.png"  height="222" width="158" alt="description"/>Quantité :1</div>
+<div class="floating-box-main"><img src="images/ailes.png"  height="222" width="158" alt="description"/>${joueur.marqueurMain} ${joueur.dateArrivee}</div>
 <div class="floating-box-main"><img src="images/bave.png"  height="222" width="158" alt="description"/>Quantité :1</div>
 <div class="floating-box-main"><img src="images/lapis.png"  height="222" width="158" alt="description"/>Quantité :1</div>
 <div class="floating-box-main"><img src="images/sang.png"  height="222" width="158" alt="description"/>Quantité :1</div>
@@ -26,7 +26,7 @@
         </c:when>
         <c:otherwise>
             <c:choose>
-                <c:when test="${main}">
+                <c:when test="${joueur.marqueurMain==true}">
                     <a  class="button" href="<c:url value="/lancersort"/>"> Lancer un sort</a><br><br><br><br>
                     <a  class="button" href="<c:url value="/Passer le tour"/>"> Passer le tour</a><br><br><br>
                 </c:when>

@@ -27,7 +27,7 @@
             <div class="post-container">                
     <div class="post-thumb"><img src="images/s1.png"  height="200" width="142"></div>
     <div class="post-content">
-        <p>Pseudo <br> Nombre de cartes: ??? <br> Statut vivant/mort</p></div>
+        <p>${joueur} ${main} <br> Nombre de cartes: ??? <br> Statut vivant/mort</p></div>
 </div>
             <div class="post-container">                
     <div class="post-thumb"><img src="images/s2.png"  height="200" width="142"></div>

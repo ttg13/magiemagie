@@ -42,8 +42,10 @@ public class TableJeuService {
                     carteService.creerRandomCarte(j.getId());
                 }
             }
-            joueurCrud.findOneByDateArrivee(1l).setMarqueurMain(true);
-            
+            long l=1;
+            Joueur j2=joueurCrud.findOneByDateArrivee(l);
+                    j2.setMarqueurMain(true);
+            joueurCrud.save(j2);
             
     }
     

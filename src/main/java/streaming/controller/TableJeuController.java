@@ -35,7 +35,7 @@ public class TableJeuController {
     TableJeuService tablejeuservice;
 
     @RequestMapping(value = "/homepage", method = RequestMethod.GET)
-    public String homepageGET(Model model) {
+    public String homepageGET(Model model, HttpSession session) {
 
         return "homepage";
     }
@@ -49,29 +49,25 @@ public class TableJeuController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String loginPOST(@ModelAttribute("ajoutjoueur") Joueur j, HttpSession session) {
 
-        joueurservice.creerJoueur(j.getPseudo(), j.getTypeSorciere());
-        session.setAttribute("joueur", j);
+        Joueur j2 = joueurservice.creerJoueur(j.getPseudo(), j.getTypeSorciere());
+        
+        session.setAttribute("joueur", j2);
         return "redirect:/homepage";
     }
 
     //ce post permet de démarrer la partie
     @RequestMapping(value = "/launch", method = RequestMethod.GET)
-    public String launchPOST(Model model, HttpSession session) {
-
+    public String launchPOST( Model model, HttpSession session) {
+        
+        Joueur j = (Joueur) session.getAttribute("joueur");
+        
         tablejeuservice.commencerJeu();
-        session.setAttribute("partielancee", true);
-        if (!joueurcrud.findAllByMarqueurMainTrue().isEmpty()) {
-            Joueur jtest = joueurcrud.findAllByMarqueurMainTrue().get(0);
-            Joueur j = (Joueur) session.getAttribute("joueur");
-
-            if (j.equals(jtest)) {
-                session.setAttribute("main", true);
-            } else {
-                session.setAttribute("main", false);
-            }
-        } else {
-            session.setAttribute("main", false);
+        if(j.getDateArrivee()==1){
+        j.setMarqueurMain(true);
         }
+        session.setAttribute("partielancee", true);
+        session.setAttribute("joueur", j);
+
         return "redirect:/homepage";
     }
 

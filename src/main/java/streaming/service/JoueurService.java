@@ -27,7 +27,7 @@ public class JoueurService {
       @Autowired 
     CarteCrudService carteCrud;
      
-    public void creerJoueur(String login, long carte){
+    public Joueur creerJoueur(String login, long carte){
         Joueur j = new Joueur();
         j.setPseudo(login);
         long ordre = joueurCrud.findAll().size();
@@ -36,6 +36,7 @@ public class JoueurService {
         j.setMarqueurMain(false);
         j.setPerdu(false);
         joueurCrud.save(j);
+        return j;
     }
     
     public void invisiblite(long idJoueur){

@@ -54,7 +54,9 @@ public class TableJeuController {
     }
     
     //ce post permet de démarrer la partie
-    @RequestMapping(value = "/launch", method = RequestMethod.POST)
+    
+    
+    @RequestMapping(value = "/launch", method = RequestMethod.GET)
     public String launchPOST(Model model){
         
         tablejeuservice.commencerJeu();

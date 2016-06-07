@@ -12,7 +12,7 @@
 <script lang="javascript">
     
     function raffrai(){
-        $('#sousmenu').load('raff');
+        $('#sousdiv').load('raff');
         
     }
     

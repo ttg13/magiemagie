@@ -15,16 +15,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author ajc
  */
 @Controller
-public class JoueurController {
-    @RequestMapping(value = "/lancersort", method = RequestMethod.GET)
-    public String sortGET(Model model){
+public class RaffraichissementController {
+    @RequestMapping(value = "/raffrai", method = RequestMethod.GET)
+    public String raffraichissmentGET(Model model){
         
-        return "sort";
+        return "sousdiv";
     }
     
-    @RequestMapping(value = "/lancersort", method = RequestMethod.POST)
-    public String sortPOST(Model model){
-        
-        return "sort";
-    }
 }

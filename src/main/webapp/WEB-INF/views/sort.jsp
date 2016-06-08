@@ -32,7 +32,8 @@
                  
                  
                   <br>
-                 <input type="submit" value="Valider"/>
+                  <input class="button" type="submit" value="Valider"/>
+                  
             </form:form>
                  
         

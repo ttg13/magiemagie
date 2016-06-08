@@ -5,8 +5,6 @@
  */
 package streaming.controller;
 
-import java.util.ArrayList;
-import java.util.List;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +17,7 @@ import streaming.entity.Joueur;
 import streaming.service.CarteCrudService;
 import streaming.service.JoueurCrudService;
 import streaming.service.JoueurService;
+import streaming.service.MessageCrudService;
 import streaming.service.MessageService;
 import streaming.service.TableJeuService;
 
@@ -43,6 +42,9 @@ public class TableJeuController {
     
     @Autowired
     MessageService messageService;
+    
+    @Autowired
+    MessageCrudService messagecrud;
 
     @RequestMapping(value = "/homepage", method = RequestMethod.GET)
     public String homepageGET(Model model, HttpSession session) {
@@ -82,6 +84,8 @@ public class TableJeuController {
             session.setAttribute("partielancee", true);
         }
         
+        //récuperer les messages pendant la partie
+        session.setAttribute("affichage", messagecrud.findAllByJoueurId(j.getId()).get(0));
         
         
         //recup la liste des cartes dont on dispose

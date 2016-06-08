@@ -51,9 +51,12 @@
 </div>
 
         <div class="floating-box-info-zone">
-
-         lol
-
+            
+            
+            <form:form modelAttribute="affichage">
+                ${affichage.message}
+            </form:form>
+            
         </div>
 
 

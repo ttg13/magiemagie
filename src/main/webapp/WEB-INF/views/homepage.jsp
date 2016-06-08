@@ -11,13 +11,14 @@
     <head>
         <script src="JS/jquery-2.2.4.js" type="text/javascript"></script>
         <script lang="javascript">
-            
+
             function loadinfos() {
                 $('#zone_ajax').load("ajax_partienondemarree_ou_plateau");
+ 
             }
-            
-            $(function(){
-                
+
+            $(function () {
+
                 setInterval(loadinfos, 1000);
             });
         </script>
@@ -26,11 +27,12 @@
     <body>
         <div id="zone_ajax">
         </div> 
-        
+ 
         <div class="floating-box-action-zone">
-    
-    <c:if test="${affichageSort==true}"><c:import url="sort.jsp"/></c:if>
-   
-</div>
+
+            <c:if test="${affichageSort==true}"><c:import url="sort.jsp"/></c:if>
+
+        </div>
+         
     </body>
 </html>

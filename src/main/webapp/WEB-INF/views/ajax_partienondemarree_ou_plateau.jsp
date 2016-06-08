@@ -9,15 +9,15 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <c:forEach items="${players}" var="players" >
+
     <div class="post-container">                
         <div class="post-thumb"><img src="images/s${players.typeSorciere}.png"  height="200" width="142"></div>
         <div class="post-content">
             <p>${players.pseudo} <br> Nombre de cartes: ??? <br> Mort ?->${players.perdu==true}
             </p></div>
     </div>
+
 </c:forEach>
-
-
 
 <div class="dashboard">Dashboard</div>
 <br>
@@ -47,7 +47,6 @@
         </c:otherwise>
     </c:choose>
 </div>
-
 
 
 

@@ -10,12 +10,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <c:import url="_HEAD.jsp"/>
     </head>
     <body>
-        <div class="titre">
-            <c:import url="_TITRE.jsp"/>
-        </div>
         <div class="contenu">
 
 
@@ -55,9 +51,6 @@
         </div> 
 
 
-        <div class="pied">
-            <c:import url="_PIED.jsp"/>
-        </div>
 
     </body>
 </html>

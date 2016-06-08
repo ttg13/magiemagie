@@ -10,17 +10,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <c:import url="_HEAD.jsp"/>
     </head>
     <body>
-        <div class="titre">
-        <c:import url="_TITRE.jsp"/>
-        </div>
         <div class="contenu"></div> 
         
-        <div class="menu">
-        <c:import url="_MENU.jsp"/>
-        </div>
         <form:form modelAttribute="mesSorts" method="post">
                  <label>Quels sort souhaites vous lancez</label><br>
                  <form:radiobutton path="sort" value="HYPNOSE" /><label>Hypnose</label><br>
@@ -40,9 +33,6 @@
             </form:form>
                  
         
-        <div class="pied">
-        <c:import url="_PIED.jsp"/>
-        </div>
         
     </body>
 </html>

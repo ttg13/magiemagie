@@ -5,6 +5,8 @@
  */
 package streaming.controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -65,10 +67,11 @@ public class TableJeuController {
     public String ajaxPartienondemarreeOuPlateau(HttpSession session) {
 
         // Récup lister ts joueurs
+        session.setAttribute("players", joueurcrud.findAll());
         
         // Récup j actuel
         Joueur j = (Joueur) session.getAttribute("joueur");
-        
+
         session.setAttribute("sangcount", cartecrudservice.findAllByJoueurIdAndTypecarte(j.getId(), Carte.Typecarte.SANGVIERGE).size());
         session.setAttribute("souriscount", cartecrudservice.findAllByJoueurIdAndTypecarte(j.getId(), Carte.Typecarte.AILESOURIS).size());
         session.setAttribute("bavecount", cartecrudservice.findAllByJoueurIdAndTypecarte(j.getId(), Carte.Typecarte.BAVECRAPAUD).size());

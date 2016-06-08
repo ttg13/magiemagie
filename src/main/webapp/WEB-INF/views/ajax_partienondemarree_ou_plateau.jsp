@@ -7,12 +7,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
+<c:forEach items="${players}" var="players" >
 <div class="post-container">                
-                <div class="post-thumb"><img src="images/s1.png"  height="200" width="142"></div>
+                <div class="post-thumb"><img src="images/s${players.typeSorciere}.png"  height="200" width="142"></div>
                 <div class="post-content">
-                    <p>${joueur} ${main} <br> Nombre de cartes: ??? <br> Statut vivant/mort</p></div>
+                    <p>${players.pseudo} <br> Nombre de cartes: ??? <br> Mort ?->${players.perdu==true}
+                    </p></div>
             </div>
-
+</c:forEach>
 
 
 

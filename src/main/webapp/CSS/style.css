@@ -44,10 +44,21 @@ background-image:url(http://umad.com/img/2015/10/dark-wood-wallpaper-601-659-hd-
     width: 1500px;
     height: 230px;
     margin: 20px 20px 0 0;  
+
+    overflow: auto;
+        font-family: fantasy;
+}
+
+.floating-box-info-zone {
+    display: inline-block;
+    width: 500px;
+    height: 230px;
+    margin: 20px 20px 0 0;  
     border: 5px solid #73AD21; 
     overflow: auto;
         font-family: fantasy;
 }
+
 
 .post-container {
     display: inline-block;

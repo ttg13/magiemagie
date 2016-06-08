@@ -72,6 +72,11 @@ public class TableJeuController {
         // Récup j actuel
         Joueur j = (Joueur) session.getAttribute("joueur");
 
+        //recuperation de l'attribut "partie lancée"
+        
+        
+        
+        //recup la liste des cartes dont on dispose
         session.setAttribute("sangcount", cartecrudservice.findAllByJoueurIdAndTypecarte(j.getId(), Carte.Typecarte.SANGVIERGE).size());
         session.setAttribute("souriscount", cartecrudservice.findAllByJoueurIdAndTypecarte(j.getId(), Carte.Typecarte.AILESOURIS).size());
         session.setAttribute("bavecount", cartecrudservice.findAllByJoueurIdAndTypecarte(j.getId(), Carte.Typecarte.BAVECRAPAUD).size());

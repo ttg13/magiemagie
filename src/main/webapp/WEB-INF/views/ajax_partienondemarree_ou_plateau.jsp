@@ -48,6 +48,10 @@
     </c:choose>
 </div>
 
+        <div class="floating-box-info-zone">
 
+         lol
+
+        </div>
 
 

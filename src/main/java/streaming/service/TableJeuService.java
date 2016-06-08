@@ -35,6 +35,9 @@ public class TableJeuService {
     @Autowired
     JoueurService joueurService;
     
+    @Autowired
+    MessageCrudService messageCrud;
+    
     public void commencerJeu(){
             List<Joueur> joueurs = joueurCrud.findAll();
             for(Joueur j : joueurs){
@@ -137,7 +140,14 @@ public class TableJeuService {
         return sorts;
     }
     
-    
+    public void gagnantdrop(Joueur j){
+        
+       joueurCrud.deleteAll();
+       messageCrud.deleteAll();
+       carteCrud.deleteAll();
+       
+    }
 }
 
 
+      

@@ -46,7 +46,7 @@ public class JoueurController {
      
     @RequestMapping(value = "/lancersort", method = RequestMethod.GET)
     public String sortGET(Model model){
-        
+       
         model.addAttribute("mesSorts",new ListeSortDTO() );
         model.addAttribute("monJoueurCible",new Joueur() );
         model.addAttribute("joueurCible",joueurcrud.findAllByMarqueurMainFalse() );
@@ -54,12 +54,13 @@ public class JoueurController {
         model.addAttribute("carteCible",cartecrud.findAllByJoueurId(1) );
         model.addAttribute("affichageSort", true);
         return "homepage";
+       
     }
     
     @RequestMapping(value = "/lancersort", method = RequestMethod.POST)
     public String sortPOST(HttpSession session,@ModelAttribute ListeSortDTO dto, Model model){
         Joueur j =(Joueur) session.getAttribute("joueur");
-       
+       try{
         if(dto.getSort().equals("INVISIBILITE")){
             joueurservice.invisiblite(j.getId());
             String msg = "Le joueur "+ j.getPseudo() +" a lancé INVISIBILITE !";
@@ -70,7 +71,7 @@ public class JoueurController {
         if(dto.getSort().equals("HYPNOSE")){
             joueurservice.hypnose(j.getId(), dto.getJoueurCible(), dto.getCarteCible());
             String msg = "Le joueur "+ j.getPseudo() +" a lancé HYPNOSE sur "+ dto.getJoueurCible()+"!";
-            String msg2 ="Vous avez vole deux ressources a"+dto.getJoueurCible() +"!";
+            String msg2 ="Vous avez vole deux ressources a "+dto.getJoueurCible() +"!";
             messageService.messageGlodal(msg);
             messageService.messagePersonnel(msg2, j.getId());
         }
@@ -84,7 +85,7 @@ public class JoueurController {
             
             joueurservice.filtreAmour(j.getId(),dto.getJoueurCible());
             String msg = "Le joueur "+ j.getPseudo() +" a lancé FILTRE D AMOUR sur "+ dto.getJoueurCible()+"!";
-            String msg2 ="Vous avez vole la moitie des ressources a"+dto.getJoueurCible() +"!";
+            String msg2 ="Vous avez vole la moitie des ressources a "+dto.getJoueurCible() +"!";
             messageService.messageGlodal(msg);
             messageService.messagePersonnel(msg2, j.getId());
         }
@@ -94,7 +95,11 @@ public class JoueurController {
         model.addAttribute("affichageSort", false);
         tableservice.eliminer();
         tableservice.joueurSuivant();
-        
+        }
+       catch(RuntimeException e){
+           messageService.messagePersonnel("Tu n'as pas assez de ressources pour faire ça !", j.getId());
+       }
         return "homepage";
+        
     }
 }

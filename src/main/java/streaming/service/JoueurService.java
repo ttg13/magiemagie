@@ -35,6 +35,8 @@ public class JoueurService {
         j.setTypeSorciere(carte);
         j.setMarqueurMain(false);
         j.setPerdu(false);
+        j.setAssome(false);
+        j.setPasseTour(0);
         joueurCrud.save(j);
         return j;
     }
@@ -99,4 +101,12 @@ public class JoueurService {
             }
         return liste;
     }
+    
+     public void sommeil(String victime){
+         Joueur j = joueurCrud.findOneByPseudo(victime);
+         j.setAssome(true);
+         j.setPasseTour(2);
+         joueurCrud.save(j);
+     }
+     
 }

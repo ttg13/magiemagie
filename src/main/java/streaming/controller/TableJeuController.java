@@ -120,9 +120,10 @@ public class TableJeuController {
         return "redirect:/homepage";
     }
 
-    @RequestMapping(value = "/passer", method = RequestMethod.GET)
-    public String passerGET() {
-
+     @RequestMapping(value = "/passer", method = RequestMethod.GET)
+    public String passerGET(HttpSession session) {
+        Joueur j =(Joueur) session.getAttribute("joueur");
+        messageService.messageGlodal("Le joueur "+j.getPseudo()+" a passe son tour");
         tablejeuservice.joueurSuivant();
 
         return "redirect:/homepage";

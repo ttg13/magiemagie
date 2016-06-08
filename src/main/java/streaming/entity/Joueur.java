@@ -33,6 +33,8 @@ public class Joueur implements Serializable {
     private boolean marqueurMain;
     private boolean perdu;
     private long typeSorciere;
+    private boolean assome;
+    private int passeTour;
     
     
 //    @ManyToOne
@@ -93,8 +95,21 @@ public class Joueur implements Serializable {
         this.messages = messages;
     }
 
-    
+    public boolean isAssome() {
+        return assome;
+    }
 
+    public void setAssome(boolean assome) {
+        this.assome = assome;
+    }
+
+    public int getPasseTour() {
+        return passeTour;
+    }
+
+    public void setPasseTour(int passeTour) {
+        this.passeTour = passeTour;
+    }
     
 
 //    public TableJeu getTablejeu() {

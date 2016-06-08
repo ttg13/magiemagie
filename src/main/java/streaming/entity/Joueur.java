@@ -41,6 +41,10 @@ public class Joueur implements Serializable {
 
     @OneToMany(mappedBy = "joueur")
     private List<Carte> cartes = new ArrayList();
+    
+    @OneToMany(mappedBy = "joueur")
+    private List<Message> messages = new ArrayList();
+    
 
     public boolean isPerdu() {
         return perdu;
@@ -81,6 +85,15 @@ public class Joueur implements Serializable {
         this.marqueurMain = marqueurMain;
     }
 
+    public List<Message> getMessages() {
+        return messages;
+    }
+
+    public void setMessages(List<Message> messages) {
+        this.messages = messages;
+    }
+
+    
 
     
 

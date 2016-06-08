@@ -19,6 +19,7 @@ import streaming.entity.Joueur;
 import streaming.service.CarteCrudService;
 import streaming.service.JoueurCrudService;
 import streaming.service.JoueurService;
+import streaming.service.MessageService;
 import streaming.service.TableJeuService;
 
 /**
@@ -39,6 +40,9 @@ public class TableJeuController {
 
     @Autowired
     CarteCrudService cartecrudservice;
+    
+    @Autowired
+    MessageService messageService;
 
     @RequestMapping(value = "/homepage", method = RequestMethod.GET)
     public String homepageGET(Model model, HttpSession session) {
@@ -56,6 +60,7 @@ public class TableJeuController {
     public String loginPOST(@ModelAttribute("ajoutjoueur") Joueur j, HttpSession session) {
 
         Joueur j2 = joueurservice.creerJoueur(j.getPseudo(), j.getTypeSorciere());
+        messageService.debut(j2.getId());
 
         session.setAttribute("joueur", j2);
 

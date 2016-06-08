@@ -73,6 +73,9 @@ public class TableJeuController {
         Joueur j = (Joueur) session.getAttribute("joueur");
 
         //recuperation de l'attribut "partie lancée"
+        if (joueurcrud.findAllByMarqueurMainTrue().get(0) != null) {
+            session.setAttribute("partielancee", true);
+        }
         
         
         

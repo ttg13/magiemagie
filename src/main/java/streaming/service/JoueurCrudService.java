@@ -25,5 +25,4 @@ public interface JoueurCrudService extends CrudRepository<Joueur, Long> {
     
      public List<Joueur> findAllByPerduFalse();
      
-     public List<Joueur> findAllByPasseTourGreaterThan( int d);
 }

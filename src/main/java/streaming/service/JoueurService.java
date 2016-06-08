@@ -109,4 +109,19 @@ public class JoueurService {
          joueurCrud.save(j);
      }
      
+     public void passe(long id){
+         Joueur j = joueurCrud.findOne(id);
+         int tour = j.getPasseTour();
+         if(tour>0){
+             tour--;
+             j.setPasseTour(tour);
+             joueurCrud.save(j);
+         }
+         if(j.getPasseTour()==0){
+             j.setAssome(false);
+             joueurCrud.save(j);
+         }
+         
+     }
+     
 }

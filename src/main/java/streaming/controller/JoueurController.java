@@ -90,6 +90,15 @@ public class JoueurController {
             messageService.messagePersonnel(msg2, j.getId());
         }
         
+         if(dto.getSort().equals("SOMMEILPROFOND")){
+            
+            joueurservice.sommeil(dto.getJoueurCible());
+            String msg = "Le joueur "+ j.getPseudo() +" a lancé SOMMEIL PROFOND  sur "+ dto.getJoueurCible()+"!";
+            String msg2 ="Vous avez assomé "+dto.getJoueurCible() +"!";
+            messageService.messageGlodal(msg);
+            messageService.messagePersonnel(msg2, j.getId());
+        }
+        
         
         
         model.addAttribute("affichageSort", false);

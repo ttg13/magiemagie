@@ -48,7 +48,7 @@ public class JoueurController {
         model.addAttribute("joueurCible",joueurcrud.findAllByMarqueurMainFalse() );
         model.addAttribute("maCarte",new Carte() );
         model.addAttribute("carteCible",cartecrud.findAllByJoueurId(1) );
-        return "sort";
+        return "ajax_partienondemarree_ou_plateau";
     }
     
     @RequestMapping(value = "/lancersort", method = RequestMethod.POST)

@@ -6,14 +6,15 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <c:forEach items="${players}" var="players" >
-<div class="post-container">                
-                <div class="post-thumb"><img src="images/s${players.typeSorciere}.png"  height="200" width="142"></div>
-                <div class="post-content">
-                    <p>${players.pseudo} <br> Nombre de cartes: ??? <br> Mort ?->${players.perdu==true}
-                    </p></div>
-            </div>
+    <div class="post-container">                
+        <div class="post-thumb"><img src="images/s${players.typeSorciere}.png"  height="200" width="142"></div>
+        <div class="post-content">
+            <p>${players.pseudo} <br> Nombre de cartes: ??? <br> Mort ?->${players.perdu==true}
+            </p></div>
+    </div>
 </c:forEach>
 
 
@@ -49,15 +50,27 @@
 
 
 <div class="floating-box-action-zone">
-    
-    Choisissez votre victime :
-    
-    
-    
-    
+
+    <form:form modelAttribute="mesSorts" method="post">
+        <label>Quels sort souhaites vous lancez</label><br>
+        <form:radiobutton path="sort" value="HYPNOSE" /><label>Hypnose</label><br>
+        <form:radiobutton path="sort"  value="INVISIBILITE"/><label>Invisibilité</label>
+        <br>
+        <form:radiobutton  path="sort"  value="FILTREAMOUR"/><label>Filtre d amour</label>
+        <br>
+        <form:radiobutton  path="sort"  value="DIVINATION"/><label>Divination</label>
+        <br>
+        <form:select path="joueurCible"  items="${joueurCible}" itemLabel="pseudo" itemValue="pseudo" />
+        <br>
+        <form:select path="carteCible"  items="${carteCible}" itemLabel="Typecarte" itemValue="Typecarte" />
+
+
+        <%--<form:select path="carteCible"  items="${carteCible}" itemLabel="Typecarte" itemValue="id" path="id"/>--%>
+
+
+        <br>
+        <input type="submit" value="Valider"/>
+    </form:form>
 </div>
 
-<div id="sousmenu">
-
-</div>
 

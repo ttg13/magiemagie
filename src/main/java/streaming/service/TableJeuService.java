@@ -87,22 +87,22 @@ public class TableJeuService {
         }
     }
     
-    public void eiliminer(){
+    public void eliminer(){
         List<Joueur> joueurs = joueurCrud.findAll();
         for(Joueur j : joueurs){
             List<Carte> cartes = carteCrud.findAllByJoueurId(j.getId());
-            if(cartes.size()==0){
+            if(cartes.isEmpty()){
                 j.setPerdu(true);
                 joueurCrud.save(j);
             }
         }
         
-        List<Joueur> gagnants = joueurCrud.findAllByPerduFalse();
-        if(gagnants.size()<2){
-        }
-        else{
-            joueurSuivant();
-        }
+//        List<Joueur> gagnants = joueurCrud.findAllByPerduFalse();
+//        if(gagnants.size()<2){
+//        }
+//        else{
+//            joueurSuivant();
+//        }
     }
     
     public List<String> listeSort(long idJoueur){

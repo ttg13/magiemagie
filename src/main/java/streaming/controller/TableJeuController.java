@@ -77,6 +77,7 @@ public class TableJeuController {
         session.setAttribute("bavecount", cartecrudservice.findAllByJoueurIdAndTypecarte(j.getId(), Carte.Typecarte.BAVECRAPAUD).size());
         session.setAttribute("cornecount", cartecrudservice.findAllByJoueurIdAndTypecarte(j.getId(), Carte.Typecarte.CORNELICORNE).size());
         session.setAttribute("lapiscount", cartecrudservice.findAllByJoueurIdAndTypecarte(j.getId(), Carte.Typecarte.LAPISLAZULIS).size());
+        session.setAttribute("joueur",joueurcrud.findOne(j.getId()));
 
         return "ajax_partienondemarree_ou_plateau";
     }

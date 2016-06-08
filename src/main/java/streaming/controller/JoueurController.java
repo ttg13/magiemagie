@@ -68,9 +68,12 @@ public class JoueurController {
             
             joueurservice.filtreAmour(j.getId(),dto.getJoueurCible());
         }
-        tableservice.joueurSuivant();
+        
+        
         
         model.addAttribute("affichageSort", false);
+        tableservice.eliminer();
+        tableservice.joueurSuivant();
         
         return "homepage";
     }

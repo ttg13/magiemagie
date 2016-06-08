@@ -55,6 +55,7 @@ public class JoueurController {
     @RequestMapping(value = "/lancersort", method = RequestMethod.POST)
     public String sortPOST(HttpSession session,@ModelAttribute ListeSortDTO dto, Model model){
         Joueur j =(Joueur) session.getAttribute("joueur");
+       
         if(dto.getSort().equals("INVISIBILITE")){
             joueurservice.invisiblite(j.getId());
         }

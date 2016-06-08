@@ -13,7 +13,9 @@
     <div class="post-container">                
         <div class="post-thumb"><img src="images/s${players.typeSorciere}.png"  height="200" width="142"></div>
         <div class="post-content">
-            <p>${players.pseudo} <br> Nombre de cartes: ??? <br> Mort ?->${players.perdu==true}
+            <p>${players.pseudo} <br> Nombre de cartes: ${players.cartes.size()} <br>
+                <c:if test="${players.perdu==true}">Mort</c:if>
+                <c:if test="${players.perdu!=true}">Vivant</c:if>
             </p></div>
     </div>
 

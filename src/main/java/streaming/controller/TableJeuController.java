@@ -39,10 +39,10 @@ public class TableJeuController {
 
     @Autowired
     CarteCrudService cartecrudservice;
-    
+
     @Autowired
     MessageService messageService;
-    
+
     @Autowired
     MessageCrudService messagecrud;
 
@@ -50,6 +50,12 @@ public class TableJeuController {
     public String homepageGET(Model model, HttpSession session) {
 
         return "homepage";
+    }
+
+    @RequestMapping(value = "/winner", method = RequestMethod.GET)
+    public String winnerGET(Model model, HttpSession session) {
+
+        return "gagnant";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -75,7 +81,7 @@ public class TableJeuController {
 
         // Récup lister ts joueurs
         session.setAttribute("players", joueurcrud.findAll());
-        
+
         // Récup j actuel
         Joueur j = (Joueur) session.getAttribute("joueur");
 
@@ -83,18 +89,26 @@ public class TableJeuController {
         if (!joueurcrud.findAllByMarqueurMainTrue().isEmpty()) {
             session.setAttribute("partielancee", true);
         }
-        
+
         //récuperer les messages pendant la partie
         session.setAttribute("affichage", messagecrud.findAllByJoueurId(j.getId()).get(0));
-        
-        
+
+        //vérifier si il y a un gagnant 
+        //if (!joueurcrud.findAllByMarqueurMainTrue().isEmpty()) {
+
+       //     if (joueurcrud.findAllByPerduFalse().size() == 1 ) {
+       //         tablejeuservice.gagnantdrop(j);
+       //         return "redirect:/winner";
+       //     }
+       // }
+
         //recup la liste des cartes dont on dispose
         session.setAttribute("sangcount", cartecrudservice.findAllByJoueurIdAndTypecarte(j.getId(), Carte.Typecarte.SANGVIERGE).size());
         session.setAttribute("souriscount", cartecrudservice.findAllByJoueurIdAndTypecarte(j.getId(), Carte.Typecarte.AILESOURIS).size());
         session.setAttribute("bavecount", cartecrudservice.findAllByJoueurIdAndTypecarte(j.getId(), Carte.Typecarte.BAVECRAPAUD).size());
         session.setAttribute("cornecount", cartecrudservice.findAllByJoueurIdAndTypecarte(j.getId(), Carte.Typecarte.CORNELICORNE).size());
         session.setAttribute("lapiscount", cartecrudservice.findAllByJoueurIdAndTypecarte(j.getId(), Carte.Typecarte.LAPISLAZULIS).size());
-        session.setAttribute("joueur",joueurcrud.findOne(j.getId()));
+        session.setAttribute("joueur", joueurcrud.findOne(j.getId()));
 
         return "ajax_partienondemarree_ou_plateau";
     }
@@ -120,10 +134,10 @@ public class TableJeuController {
         return "redirect:/homepage";
     }
 
-     @RequestMapping(value = "/passer", method = RequestMethod.GET)
+    @RequestMapping(value = "/passer", method = RequestMethod.GET)
     public String passerGET(HttpSession session) {
-        Joueur j =(Joueur) session.getAttribute("joueur");
-        messageService.messageGlodal("Le joueur "+j.getPseudo()+" a passe son tour");
+        Joueur j = (Joueur) session.getAttribute("joueur");
+        messageService.messageGlodal("Le joueur " + j.getPseudo() + " a passe son tour");
         tablejeuservice.joueurSuivant();
 
         return "redirect:/homepage";

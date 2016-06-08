@@ -67,7 +67,7 @@ public class JoueurController {
             
             joueurservice.filtreAmour(j.getId(),dto.getJoueurCible());
         }
-        
+        tableservice.joueurSuivant();
         return "homepage";
     }
 }

@@ -18,6 +18,7 @@ import streaming.entity.Joueur;
 import streaming.service.CarteCrudService;
 import streaming.service.JoueurCrudService;
 import streaming.service.JoueurService;
+import streaming.service.MessageService;
 import streaming.service.TableJeuService;
 
 /**
@@ -40,6 +41,9 @@ public class JoueurController {
      @Autowired
     TableJeuService tableservice;
      
+     @Autowired
+    MessageService messageService;
+     
     @RequestMapping(value = "/lancersort", method = RequestMethod.GET)
     public String sortGET(Model model){
         
@@ -58,16 +62,31 @@ public class JoueurController {
        
         if(dto.getSort().equals("INVISIBILITE")){
             joueurservice.invisiblite(j.getId());
+            String msg = "Le joueur "+ j.getPseudo() +" a lancé INVISIBILITE !";
+            String msg2 ="Vous avez vole une ressource à chacun des autres joueurs !";
+            messageService.messageGlodal(msg);
+            messageService.messagePersonnel(msg2, j.getId());
         }
         if(dto.getSort().equals("HYPNOSE")){
             joueurservice.hypnose(j.getId(), dto.getJoueurCible(), dto.getCarteCible());
+            String msg = "Le joueur "+ j.getPseudo() +" a lancé HYPNOSE sur "+ dto.getJoueurCible()+"!";
+            String msg2 ="Vous avez vole deux ressources a"+dto.getJoueurCible() +"!";
+            messageService.messageGlodal(msg);
+            messageService.messagePersonnel(msg2, j.getId());
         }
         if(dto.getSort().equals("DIVINATION")){
-           joueurservice.divination(j.getId());
+            String msg = "Le joueur "+ j.getPseudo() +" a lancé DIVINATION !";
+            messageService.messageGlodal(msg);
+            messageService.messagePersonnel(joueurservice.divination2(j.getId()), j.getId());
+           
         }
         if(dto.getSort().equals("FILTREAMOUR")){
             
             joueurservice.filtreAmour(j.getId(),dto.getJoueurCible());
+            String msg = "Le joueur "+ j.getPseudo() +" a lancé FILTRE D AMOUR sur "+ dto.getJoueurCible()+"!";
+            String msg2 ="Vous avez vole la moitie des ressources a"+dto.getJoueurCible() +"!";
+            messageService.messageGlodal(msg);
+            messageService.messagePersonnel(msg2, j.getId());
         }
         
         

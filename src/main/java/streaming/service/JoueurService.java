@@ -84,4 +84,19 @@ public class JoueurService {
             }
         return liste;
     }
+    
+    public String divination2(long idJoueur){
+        String liste = new String();
+         List<Joueur> joueurs = joueurCrud.findAll();
+            for(Joueur j : joueurs){
+                if(!j.equals(joueurCrud.findOne(idJoueur))){
+                    liste += " " +j.toString();
+                    List<Carte> cartes = carteCrud.findAllByJoueurId(j.getId());
+                    for(Carte c : cartes){
+                        liste += " " +c.toString();
+                    }
+                }
+            }
+        return liste;
+    }
 }

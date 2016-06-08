@@ -55,8 +55,19 @@ public class JoueurController {
     public String sortPOST(HttpSession session,@ModelAttribute ListeSortDTO dto){
         Joueur j =(Joueur) session.getAttribute("joueur");
         if(dto.getSort().equals("INVISIBILITE")){
-            joueurservice.invisiblite(1);
+            joueurservice.invisiblite(j.getId());
         }
+        if(dto.getSort().equals("HYPNOSE")){
+            joueurservice.hypnose(j.getId(), dto.getJoueurCible(), dto.getCarteCible());
+        }
+        if(dto.getSort().equals("DIVINATION")){
+           joueurservice.divination(j.getId());
+        }
+        if(dto.getSort().equals("FILTREAMOUR")){
+            
+            joueurservice.filtreAmour(j.getId(),dto.getJoueurCible());
+        }
+        
         return "homepage";
     }
 }

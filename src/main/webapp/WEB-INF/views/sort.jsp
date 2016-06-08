@@ -23,9 +23,9 @@
                   <br>
                  <form:radiobutton  path="sort"  value="DIVINATION"/><label>Divination</label>
                  <br>
-                <form:select path="joueurCible"  items="${joueurCible}" itemLabel="pseudo" itemValue="id" />
+                <form:select path="joueurCible"  items="${joueurCible}" itemLabel="pseudo" itemValue="pseudo" />
                  <br>
-               <form:select path="carteCible"  items="${carteCible}" itemLabel="Typecarte" itemValue="id" />
+               <form:select path="carteCible"  items="${carteCible}" itemLabel="Typecarte" itemValue="Typecarte" />
                  
                  
                  <%--<form:select path="carteCible"  items="${carteCible}" itemLabel="Typecarte" itemValue="id" path="id"/>--%>

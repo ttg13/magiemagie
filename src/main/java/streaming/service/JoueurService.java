@@ -48,7 +48,8 @@ public class JoueurService {
         carteServvice.supprimerCarte(idJoueur, Carte.Typecarte.CORNELICORNE);
         carteServvice.supprimerCarte(idJoueur, Carte.Typecarte.BAVECRAPAUD);
     }
-    public void filtreAmour(long idJoueur, long idVictime){
+    public void filtreAmour(long idJoueur, String victime){
+        long idVictime = joueurCrud.findOneByPseudo(victime).getId();
         long i = (carteCrud.findAllByJoueurId(idVictime).size()+1)/2;
         for(long j=0; j<i;j++){
             carteServvice.volerCarte(idJoueur, idVictime);
@@ -57,8 +58,10 @@ public class JoueurService {
         carteServvice.supprimerCarte(idJoueur, Carte.Typecarte.SANGVIERGE);
     }
     
-    public void hypnose(long idJoueur, long idVictime, Carte.Typecarte type){
-       carteServvice.donnerCarte(idVictime, idJoueur, type);
+    public void hypnose(long idJoueur, String victime, String type){
+        long idVictime = joueurCrud.findOneByPseudo(victime).getId();
+        Carte carteDonne = carteServvice.trouverCarte(idJoueur, type);
+       carteServvice.donnerCarte(idVictime, idJoueur, carteDonne.getTypecarte());
        carteServvice.volerCarte(idJoueur, idVictime);
        carteServvice.volerCarte(idJoueur, idVictime);
        carteServvice.volerCarte(idJoueur, idVictime);

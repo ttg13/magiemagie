@@ -78,5 +78,26 @@ public class CarteService {
              throw new RuntimeException();
          }
      }
+     
+     public Carte trouverCarte(long id, String type){
+         Carte carte = new Carte();
+         if(type.equals("BAVECRAPUD")){
+                 carte = carteCrud.findAllByJoueurIdAndTypecarte(id, Carte.Typecarte.BAVECRAPAUD).get(0);
+         }
+         if(type.equals("CORNELICORNE")){
+                 carte = carteCrud.findAllByJoueurIdAndTypecarte(id, Carte.Typecarte.CORNELICORNE).get(0);
+         }
+         if(type.equals("LAPISLAZULIS")){
+                 carte = carteCrud.findAllByJoueurIdAndTypecarte(id, Carte.Typecarte.LAPISLAZULIS).get(0);
+         }
+         if(type.equals("AILESOURIS")){
+                 carte = carteCrud.findAllByJoueurIdAndTypecarte(id, Carte.Typecarte.AILESOURIS).get(0);
+         }
+         if(type.equals("SANGVIERGE")){
+                 carte = carteCrud.findAllByJoueurIdAndTypecarte(id, Carte.Typecarte.SANGVIERGE).get(0);
+         }
+         
+         return carte;
+     }
     
 }

@@ -21,5 +21,7 @@ public interface JoueurCrudService extends CrudRepository<Joueur, Long> {
     
     public Joueur findOneByDateArrivee(long date); 
     
+    public Joueur findOneByPseudo(String pseudo); 
+    
      public List<Joueur> findAllByPerduFalse();
 }

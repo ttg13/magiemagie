@@ -13,6 +13,9 @@ public class ListeSortDTO {
     private String sort;
     private String joueurCible;
     private String carteCible;
+    
+//    private Joueur joueurCible;
+//    private Carte carteCible;
 
     public String getSort() {
         return sort;
@@ -21,6 +24,9 @@ public class ListeSortDTO {
     public void setSort(String sort) {
         this.sort = sort;
     }
+    
+    
+    
 
     public String getJoueurCible() {
         return joueurCible;

@@ -102,11 +102,15 @@ public class JoueurService {
         return liste;
     }
     
-     public void sommeil(String victime){
+     public void sommeil(long idJoueur, String victime){
          Joueur j = joueurCrud.findOneByPseudo(victime);
+         
          j.setAssome(true);
          j.setPasseTour(2);
          joueurCrud.save(j);
+         carteServvice.supprimerCarte(idJoueur, Carte.Typecarte.BAVECRAPAUD);
+       carteServvice.supprimerCarte(idJoueur, Carte.Typecarte.SANGVIERGE);
+         
      }
      
      public void passe(long id){

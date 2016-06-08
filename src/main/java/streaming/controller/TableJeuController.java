@@ -138,6 +138,7 @@ public class TableJeuController {
     public String passerGET(HttpSession session) {
         Joueur j = (Joueur) session.getAttribute("joueur");
         messageService.messageGlodal("Le joueur " + j.getPseudo() + " a passe son tour");
+        joueurservice.passe(j.getId());
         tablejeuservice.joueurSuivant();
 
         return "redirect:/homepage";

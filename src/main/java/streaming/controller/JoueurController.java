@@ -92,7 +92,7 @@ public class JoueurController {
         
          if(dto.getSort().equals("SOMMEILPROFOND")){
             
-            joueurservice.sommeil(dto.getJoueurCible());
+            joueurservice.sommeil(j.getId(), dto.getJoueurCible());
             String msg = "Le joueur "+ j.getPseudo() +" a lancé SOMMEIL PROFOND  sur "+ dto.getJoueurCible()+"!";
             String msg2 ="Vous avez assomé "+dto.getJoueurCible() +"!";
             messageService.messageGlodal(msg);

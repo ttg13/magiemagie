@@ -37,13 +37,15 @@
         </c:when>
         <c:otherwise>
             <c:choose>
-                <c:when test="${joueur.marqueurMain==true and joueur.assome==false}">
+                <c:when test="${joueur.marqueurMain==true}">
+                    <c:if test="${joueur.assome==false}">
                     <a  class="button" href="<c:url value="/lancersort"/>"> Lancer un sort</a><br><br><br><br>
                     <a  class="button" href="<c:url value="/passer"/>"> Passer le tour</a><br><br><br>
-                </c:when>
-                    <c:when test="${joueur.marqueurMain==true and joueur.assome==true}">
-                    <a  class="button" href="<c:url value=""/>"> Lancer un sort</a><br><br><br><br>
+                    </c:if>
+                    <c:if test="${joueur.assome==true}">
+                    <a  class="buttonoff" href="<c:url value=""/>"> Lancer un sort</a><br><br><br><br>
                     <a  class="button" href="<c:url value="/passer"/>"> Passer le tour</a><br><br><br>
+                    </c:if>
                 </c:when>
                 <c:otherwise>
                     <a  class="buttonoff" href="<c:url value=""/>"> Lancer un sort</a><br><br><br><br>

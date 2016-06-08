@@ -55,7 +55,6 @@ public class TableJeuService {
     public void joueurSuivant(){
         //on cherche le joueur qui a la main et on lui enleve
         Joueur actuel = joueurCrud.findAllByMarqueurMainTrue().get(0);
-        joueurService.passe(actuel.getId());
         actuel.setMarqueurMain(false);
         joueurCrud.save(actuel);
         boolean elimine = true;

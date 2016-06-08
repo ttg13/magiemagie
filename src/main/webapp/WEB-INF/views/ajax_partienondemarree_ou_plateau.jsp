@@ -49,28 +49,6 @@
 </div>
 
 
-<div class="floating-box-action-zone">
 
-    <form:form modelAttribute="mesSorts" method="post">
-        <label>Quels sort souhaites vous lancez</label><br>
-        <form:radiobutton path="sort" value="HYPNOSE" /><label>Hypnose</label><br>
-        <form:radiobutton path="sort"  value="INVISIBILITE"/><label>Invisibilité</label>
-        <br>
-        <form:radiobutton  path="sort"  value="FILTREAMOUR"/><label>Filtre d amour</label>
-        <br>
-        <form:radiobutton  path="sort"  value="DIVINATION"/><label>Divination</label>
-        <br>
-        <form:select path="joueurCible"  items="${joueurCible}" itemLabel="pseudo" itemValue="pseudo" />
-        <br>
-        <form:select path="carteCible"  items="${carteCible}" itemLabel="Typecarte" itemValue="Typecarte" />
-
-
-        <%--<form:select path="carteCible"  items="${carteCible}" itemLabel="Typecarte" itemValue="id" path="id"/>--%>
-
-
-        <br>
-        <input type="submit" value="Valider"/>
-    </form:form>
-</div>
 
 

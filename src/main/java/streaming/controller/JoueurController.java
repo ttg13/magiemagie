@@ -48,11 +48,12 @@ public class JoueurController {
         model.addAttribute("joueurCible",joueurcrud.findAllByMarqueurMainFalse() );
         model.addAttribute("maCarte",new Carte() );
         model.addAttribute("carteCible",cartecrud.findAllByJoueurId(1) );
-        return "ajax_partienondemarree_ou_plateau";
+        model.addAttribute("affichageSort", true);
+        return "homepage";
     }
     
     @RequestMapping(value = "/lancersort", method = RequestMethod.POST)
-    public String sortPOST(HttpSession session,@ModelAttribute ListeSortDTO dto){
+    public String sortPOST(HttpSession session,@ModelAttribute ListeSortDTO dto, Model model){
         Joueur j =(Joueur) session.getAttribute("joueur");
         if(dto.getSort().equals("INVISIBILITE")){
             joueurservice.invisiblite(j.getId());
@@ -68,6 +69,9 @@ public class JoueurController {
             joueurservice.filtreAmour(j.getId(),dto.getJoueurCible());
         }
         tableservice.joueurSuivant();
+        
+        model.addAttribute("affichageSort", false);
+        
         return "homepage";
     }
 }

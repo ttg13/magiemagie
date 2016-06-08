@@ -26,5 +26,11 @@
     <body>
         <div id="zone_ajax">
         </div> 
+        
+        <div class="floating-box-action-zone">
+    
+    <c:if test="${affichageSort==true}"><c:import url="sort.jsp"/></c:if>
+   
+</div>
     </body>
 </html>

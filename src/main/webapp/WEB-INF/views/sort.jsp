@@ -22,8 +22,11 @@
                  <form:radiobutton  path="sort"  value="FILTREAMOUR"/><label>Filtre d amour</label>
                   <br>
                  <form:radiobutton  path="sort"  value="DIVINATION"/><label>Divination</label>
+                 <br>
+                <form:select path="joueurCible"  items="${joueurCible}" itemLabel="pseudo" itemValue="id" />
+                 <br>
+               <form:select path="carteCible"  items="${carteCible}" itemLabel="Typecarte" itemValue="id" />
                  
-                 <%--<form:select path="joueurCible"  items="${joueurCible}" itemLabel="pseudo" itemValue="id" path="id"/>--%>
                  
                  <%--<form:select path="carteCible"  items="${carteCible}" itemLabel="Typecarte" itemValue="id" path="id"/>--%>
                  
